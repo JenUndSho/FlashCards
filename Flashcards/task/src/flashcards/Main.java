@@ -1,6 +1,8 @@
 package flashcards;
 import java.util.*;
 
+import static flashcards.Constants.BYE;
+
 public class Main {
     public static void main(String[] args) {
         FlashCards fc = new FlashCards();
@@ -26,50 +28,34 @@ public class Main {
             switch (command) {
                 case "add":
                     fc.addCard();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "remove":
                     fc.removeCard();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "import":
                     fc.importCards();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "export":
                     fc.exportCard();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "ask":
                     fc.askCard();
                     break;
                 case "log":
                     fc.log();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "reset stats":
                     fc.resetStats();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "hardest card":
                     fc.hardestCard();
-                    System.out.println("\n");
-                    fc.logs.add("\n");
                     break;
                 case "exit":
                     if (fileOutput != null) {
                         fc.exportCard(fileOutput);
                     }
-                    System.out.println("Bye bye!");
-                    fc.logs.add("Bye bye!");
-                    System.out.println("\n");
-                    fc.logs.add("\n");
+                    System.out.println(BYE);
+                    fc.logs.add(BYE);
                     return;
             }
         } while (true);
